@@ -1,6 +1,8 @@
+![Technical Test Repository Banner](./public/images/banner.webp)
+
 # ⚠️ Important Notice
 
-**The Marvel API is currently experiencing issues, resulting in response times exceeding 1 minute for the past two months. For more details, please refer to the [issue tracker](#).**
+**The Marvel API is currently experiencing issues, resulting in response times exceeding 1 minute for the past two weeks. For more details, please refer to the [issue tracker](https://www.reddit.com/r/MarvelUnlimited/comments/1eb5ey4/has_anyone_else_noticed_extremely_slow_response/).**
 
 ## Marvel SPA
 
