@@ -6,6 +6,7 @@ import { CharacterComic } from '@/modules/characters/comic/domain/CharacterComic
 import { createApiCharacterComicRepository } from '@/modules/characters/comic/infrastructure/ApiComicRepository';
 import { Character } from '@/modules/characters/domain/Character';
 import { createApiCharacterRepository } from '@/modules/characters/infrastructure/ApiCharacterRepository';
+import { Metadata } from 'next';
 
 type CharacterPageProps = {
     params: {
@@ -28,6 +29,15 @@ const fetchCharacterComics = async (
     );
     return await allCharactersGetter.get(characterId);
 };
+
+export const metadata: Metadata = {
+    title: "Character by Marvel",
+    viewport: "width=device-width, initial-scale=1",
+    openGraph: {
+      title: "Character by Marvel",
+    },
+    robots: "index, follow",
+  };
 
 export default async function Page({ params }: CharacterPageProps) {
     const character = await fetchCharacter(params.characterId);

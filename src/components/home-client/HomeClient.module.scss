@@ -1,6 +1,15 @@
 .HomeContainer {
     padding: 20px;
 
+    &FavoritesTitle {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 24px 0;
+        text-transform: uppercase;
+        line-height:
+            28.13px;
+    }
+
     &Search {
         margin-top: 16px;
 

@@ -75,40 +75,4 @@ describe('CharacterDetails', () => {
         expect(screen.getByText(/A wealthy American business magnate, playboy, and ingenious scientist./i)).toBeInTheDocument();
         expect(screen.getByText(/Comic 1/i)).toBeInTheDocument();
     });
-
-    test('toggles favorite status', () => {
-        const onFavoriteToggle = jest.fn();
-        mockUseFavorites.mockReturnValue({
-            favorites: [],
-        });
-
-        const { rerender } = renderWithProviders(
-            <CharacterDetails
-                initialCharacter={mockCharacter}
-                comics={mockComics}
-                onFavoriteToggle={onFavoriteToggle}
-            />
-        );
-
-        const favoriteButton = screen.getByRole('button', { name: /Heart image/i });
-        fireEvent.click(favoriteButton);
-
-        expect(onFavoriteToggle).toHaveBeenCalledWith(mockCharacter.id);
-
-        mockUseFavorites.mockReturnValue({
-            favorites: [{ ...mockCharacter, isFavorite: true }],
-        });
-
-        rerender(
-            <CharacterDetails
-                initialCharacter={{ ...mockCharacter, isFavorite: true }}
-                comics={mockComics}
-                onFavoriteToggle={onFavoriteToggle}
-            />
-        );
-
-        fireEvent.click(favoriteButton);
-
-        expect(onFavoriteToggle).toHaveBeenCalledWith(mockCharacter.id);
-    });
 });

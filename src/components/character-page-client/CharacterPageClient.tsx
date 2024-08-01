@@ -2,7 +2,7 @@
 import CharacterDetails from '@/components/character-details/CharacterDetails';
 import { CharacterComic } from '@/modules/characters/comic/domain/CharacterComic';
 import { Character } from '@/modules/characters/domain/Character';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useFavorites } from '@/core/context/FavoritesContext';
 
 type CharacterPageClientProps = {
@@ -14,20 +14,30 @@ export default function CharacterPageClient({
     initialCharacter,
     characterComics,
 }: CharacterPageClientProps) {
-    const { addFavorite, removeFavorite } = useFavorites();
+    const { addFavorite, removeFavorite, favorites } = useFavorites();
     const [character, setCharacter] = useState<Character>(initialCharacter);
 
-    const handleFavoriteClick = (isFavorite: boolean) => {
-        if (isFavorite) {
-            removeFavorite(character);
+    const updateFavoriteObject = (characterAux: Character) => {
+        if (!characterAux.isFavorite) {
+            removeFavorite(initialCharacter);
         } else {
-            addFavorite(character);
+            addFavorite(characterAux);
         }
     };
 
+    useEffect(() => {
+        const isFavorite = favorites.some(
+            (fav: Character) => fav.id === initialCharacter.id
+        );
+        setCharacter({ ...initialCharacter, isFavorite });
+    }, [initialCharacter]);
+
     const handleFavoriteToggle = () => {
-        const updatedCharacter = { ...character, isFavorite: !character.isFavorite };
-        handleFavoriteClick(updatedCharacter.isFavorite as boolean);
+        const updatedCharacter = {
+            ...character,
+            isFavorite: !character.isFavorite,
+        };
+        updateFavoriteObject(updatedCharacter);
         setCharacter(updatedCharacter);
     };
 

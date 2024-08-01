@@ -47,6 +47,7 @@ export default function HomeClient({ characters }: HomeClientProps) {
 
     return (
         <div className={styles.HomeContainer}>
+            {showFavorites ? (<h2 className={styles.HomeContainerFavoritesTitle}>Favorites</h2>) : ''}
             <div className={styles.HomeContainerSearch}>
                 <Search onFilter={handleFilter} />
                 <div className={styles.HomeContainerSearchCount}>

@@ -10,7 +10,7 @@ import { useFavorites } from '@/core/context/FavoritesContext';
 interface CharacterDetailProps {
     initialCharacter: Character;
     comics: CharacterComic[];
-    onFavoriteToggle: (id: number) => void;
+    onFavoriteToggle: () => void;
 }
 
 const CharacterDetails: React.FC<CharacterDetailProps> = ({
@@ -18,22 +18,14 @@ const CharacterDetails: React.FC<CharacterDetailProps> = ({
     comics,
     onFavoriteToggle,
 }) => {
-    const { favorites } = useFavorites();
     const [character, setCharacter] = useState<Character>(initialCharacter);
 
     useEffect(() => {
-        const isFavorite = favorites.some(
-            (fav: Character) => fav.id === initialCharacter.id
-        );
-        setCharacter({ ...initialCharacter, isFavorite });
-    }, [initialCharacter, favorites]);
+        setCharacter({ ...initialCharacter });
+    }, [initialCharacter]);
 
     const handleFavoriteToggle = () => {
-        setCharacter(prevCharacter => ({
-            ...prevCharacter,
-            isFavorite: !prevCharacter.isFavorite,
-        }));
-        onFavoriteToggle(character.id);
+        onFavoriteToggle();
     };
 
     return (
