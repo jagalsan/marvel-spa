@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { Character } from '@/modules/characters/domain/Character';
 import styles from './CharacterList.module.scss';
-import CharacterCard from '../character-card/CharatacterCard';
+import CharacterCard from '../character-card/CharacterCard';
 import { useFavorites } from '@/core/context/FavoritesContext';
 
 interface CharacterListProps {
@@ -28,7 +28,7 @@ const CharacterList: React.FC<CharacterListProps> = ({ initialCharacters, showFa
                 const favoriteCharacters = favorites;
                 const updatedCharacters = initialCharacters.map(character => ({
                     ...character,
-                    isFavorite: favoriteCharacters.some((fav: Character) => fav.id === character.id),
+                    isFavorite: favoriteCharacters?.some((fav: Character) => fav.id === character.id),
                 }));
                 setCharacters(updatedCharacters);
             }

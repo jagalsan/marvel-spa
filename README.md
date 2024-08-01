@@ -78,6 +78,17 @@ yarn start
 
 Open http://localhost:3000 with your browser to see the result.
 
+### Running Tests
+This project uses Jest and React Testing Library for unit and integration tests. To run the tests, you can use the following commands:
+
+Run All Tests
+```bash
+npm run test
+# or
+yarn test
+```
+This command will execute all the test files and provide a coverage report.
+
 ### Context API for Favorites
 
 This project uses React Context API to manage the state of favorite characters globally. The favorite characters are stored in local storage and the count of favorites updates dynamically as users add or remove favorites.

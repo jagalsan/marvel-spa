@@ -16,7 +16,7 @@ export default function HomeClient({ characters }: HomeClientProps) {
     const [allCharacters, setAllCharacters] = useState<Character[]>(characters);
     const [filteredCharacters, setFilteredCharacters] = useState<Character[]>(characters);
     const searchParams = useSearchParams();
-    const showFavorites = searchParams.get('favoritesCharacters') === 'true';
+    const showFavorites = searchParams?.get('favoritesCharacters') === 'true';
 
     useEffect(() => {
         if (showFavorites) {
@@ -50,11 +50,11 @@ export default function HomeClient({ characters }: HomeClientProps) {
             <div className={styles.HomeContainerSearch}>
                 <Search onFilter={handleFilter} />
                 <div className={styles.HomeContainerSearchCount}>
-                    {filteredCharacters.length} results
+                    {filteredCharacters?.length || 0} results
                 </div>
             </div>
             <div className={styles.HomeContainerCharacters}>
-                {filteredCharacters.length > 0 ? (
+                {filteredCharacters?.length > 0 ? (
                     <CharacterList
                         initialCharacters={filteredCharacters}
                         showFavorites={showFavorites}

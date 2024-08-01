@@ -29,11 +29,11 @@ export const useFavorites = () => {
 };
 
 export const FavoritesProvider = ({ children }: { children: ReactNode }) => {
-    const [favorites, setFavorites] = useState<Character[]>(JSON.parse(localStorage.getItem(FAVORITES_KEY) as string));
+    const [favorites, setFavorites] = useState<Character[]>([]);
     const [favoriteCount, setFavoriteCount] = useState<number>(0);
 
     useEffect(() => {
-        const storedFavorites = JSON.parse(localStorage.getItem(FAVORITES_KEY) as string);
+        const storedFavorites = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '[]');
         setFavorites(storedFavorites);
     }, []);
 

@@ -1,5 +1,4 @@
 import CharacterPageClient from '@/components/character-page-client/CharacterPageClient';
-import { charactersResponse } from '@/data/mocks/characters.response';
 import { MarvelApiLayout } from '@/data/types/marvel-api-layout.type';
 import { CharacterGetter } from '@/modules/characters/application/CharacterGetter';
 import { AllCharacterComicsGetter } from '@/modules/characters/comic/application/AllCharacterComicsGetter';
@@ -28,10 +27,6 @@ const fetchCharacterComics = async (
         characterRepository
     );
     return await allCharactersGetter.get(characterId);
-};
-
-const fetchCharactersMock = (): Character[] => {
-    return charactersResponse;
 };
 
 export default async function Page({ params }: CharacterPageProps) {
