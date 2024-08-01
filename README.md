@@ -104,6 +104,14 @@ This project uses React Context API to manage the state of favorite characters g
 
 The FavoritesContext provides favorites, addFavorite, removeFavorite, and favoriteCount through a React Context Provider. Wrap your application in FavoritesProvider to make the context available throughout the app.
 
+### Feature Extra
+We have added a GitHub Actions workflow to automatically run tests on every Pull Request (PR). This ensures that code changes do not break existing functionality and meet our quality standards before being merged. The workflow will:
+
+Trigger on every PR to the main branches.
+- Install dependencies.
+- Run the tests.
+- Allow merging the PR only if all tests pass.
+
 ### Conclusion
 
-This Marvel SPA demonstrates a practical application of React and Next.js, integrating the Marvel API to fetch and display data dynamically while maintaining a responsive and interactive user experience. The use of React Context API ensures state management is seamless and efficient across the application.
+This Marvel SPA demonstrates a practical application of React and Next.js, integrating the Marvel API to fetch and display data dynamically while maintaining a responsive and interactive user experience. The use of React Context API ensures state management is seamless and efficient across the application. The integration of GitHub Actions for automated testing ensures code quality and reliability.
