@@ -1,0 +1,17 @@
+.HomeContainer {
+    padding: 20px;
+
+    &Search {
+        margin-top: 16px;
+
+        &Count {
+            margin-top: 12px;
+            font-size: 12px;
+            color: black;
+        }
+    }
+
+    &Characters {
+        margin-top: 32px;
+    }
+}

@@ -1,0 +1,11 @@
+.FavoritesButton {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+
+    &Heart {
+        margin-right: 8px;
+    }
+  }

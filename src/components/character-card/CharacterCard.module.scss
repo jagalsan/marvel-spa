@@ -1,0 +1,85 @@
+.CharacterCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  background-color: #000;
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 8px;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-right: 15px solid white;
+    border-top: 15px solid black;
+    width: 0;
+    z-index: 1;
+  }
+
+
+  &Image {
+    border-bottom: 4px solid #f00;
+    width: 100%;
+    height: 245px;
+  }
+
+  &Title {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    text-align: justify;
+  }
+
+  &TitleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    gap: 8px;
+    z-index: 2;
+  }
+
+
+  &FavoriteButton {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+
+    img {
+      width: 24px;
+      height: 21px;
+      min-width: 24px;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-bottom: 40px solid #00000000;
+    border-left: 40px solid transparent;
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+  }
+}

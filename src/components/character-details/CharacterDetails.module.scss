@@ -1,0 +1,88 @@
+.CharacterDetailContainer {
+  color: #fff;
+
+  .CharacterInfo {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    position: relative;
+    width: 100%;
+
+    @media only screen and (max-width: 600px) {
+      flex-wrap: wrap;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      border-right: 40px solid white;
+      border-top: 40px solid black;
+      width: 0;
+    }
+
+    &Image {
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+      }
+    }
+
+    &Text {
+      padding: 48px;
+      width: 100%;
+
+      @media only screen and (max-width: 600px) {
+        padding: 16px;
+      }
+
+      &Container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &Title {
+        font-size: 32px;
+        margin: 0;
+      }
+
+      &HeartButton {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #fff;
+        cursor: pointer;
+      }
+
+      &HeartIcon {
+        min-width: 24px;
+      }
+
+      &Description {
+        font-size: 16px;
+        margin: 24px 0;
+        line-height: 18px;
+      }
+
+    }
+  }
+
+  .ComicsSection {
+    padding: 20px;
+    margin-top: 48px;
+
+    &Title {
+      font-size: 24px;
+      margin-bottom: 24px;
+      color: black;
+    }
+
+    &Slider {
+      display: flex;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      gap: 16px;
+    }
+  }
+}

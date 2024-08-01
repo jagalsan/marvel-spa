@@ -1,0 +1,35 @@
+.searchContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+
+    .searchBox {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        border-bottom: 2px solid black;
+        padding-bottom: 4px;
+
+        &Icon {
+            margin-right: 8px;
+            color: grey;
+        }
+
+        &Input {
+            border: none;
+            flex: 1;
+            font-size: 1rem;
+            color: grey;
+            background-color: transparent;
+
+            &::placeholder {
+                color: grey;
+            }
+
+            &:focus, &:focus-visible {
+                outline: none;
+            }
+        }
+    }
+}

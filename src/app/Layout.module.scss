@@ -1,0 +1,31 @@
+.LayoutContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 10px 20px;
+    border-bottom: 1px solid  #333333;
+  }
+  
+  .Logo {
+    height: 50px;
+  }
+  
+  .FavoritesButton {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .MainContent {
+    flex: 1;
+  }
+  

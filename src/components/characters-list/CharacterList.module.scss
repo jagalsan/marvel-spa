@@ -1,0 +1,6 @@
+.CharacterListContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(188px, 1fr));
+  grid-gap: 16px;
+  justify-content: center;
+}
