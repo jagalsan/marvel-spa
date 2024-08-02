@@ -14,7 +14,7 @@ const mockUseFavorites = useFavorites as jest.Mock;
 
 const mockCharacter: Character = {
     id: 1,
-    name: 'Iron Man',
+    name: 'Iron Mann',
     description: 'A wealthy American business magnate, playboy, and ingenious scientist.',
     modified: '',
     resourceURI: '',
@@ -71,7 +71,7 @@ describe('CharacterDetails', () => {
             />
         );
 
-        expect(screen.getByText(/Iron Man/i)).toBeInTheDocument();
+        expect(screen.getByText(/Iron Mann/i)).toBeInTheDocument();
         expect(screen.getByText(/A wealthy American business magnate, playboy, and ingenious scientist./i)).toBeInTheDocument();
         expect(screen.getByText(/Comic 1/i)).toBeInTheDocument();
     });
