@@ -13,7 +13,9 @@ export function createApiCharacterRepository(): CharacterRepository {
 }
 
 async function getAll(): Promise<MarvelApiLayout<Character[]>> {
-    const characters = await fetchApi(`${MARVEL_HOST}/characters`, 'GET').then(response => response as Promise<MarvelApiLayout<Character[]>>);
+    const characters = await fetchApi(`${MARVEL_HOST}/characters`, 'GET', {
+        queryParams: { limit: 50 },
+    }).then(response => response as Promise<MarvelApiLayout<Character[]>>);
 
     let charactersAux = initializeIsFavorite(characters);
     return charactersAux;
